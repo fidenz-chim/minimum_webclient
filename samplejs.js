@@ -1,4 +1,3 @@
-
 // Initialize values
 document.getElementById('sampleTextInput').value = "Sample text input pre-loaded";
 
@@ -6,6 +5,8 @@ document.getElementById('sampleTextInput').value = "Sample text input pre-loaded
 document.getElementById('sampleInputFile').addEventListener('change',onOpenSampleFile);
 document.getElementById('sampleButton').addEventListener('click',onSampleButtonClick);
 
+var Person = require('./person.js');
+var _person = new Person('aaa', 'bbbbbb');
 
 //Event listener funtions
 function onOpenSampleFile(event){
@@ -19,6 +20,9 @@ function onOpenSampleFile(event){
 }
 
 function onSampleButtonClick(){
-    var testVal = document.getElementById('sampleTextInput').value;
-    alert(testVal);
+    // var testVal = document.getElementById('sampleTextInput').value;
+    _person.firstName = 'ccccc';
+    alert(_person.fullName());
+    alert(_person.nameWithSalution('Miss'));    
+
 }
